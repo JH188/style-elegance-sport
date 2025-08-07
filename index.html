@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Style Elegance Sport</title>
+
+    <!-- Google Font Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 1) TOP BAR -->
+    <div class="top-announcement">
+      🚚 Envío gratis en compras mayores a S/150
+    </div>
+
+    <!-- 2) HEADER -->
+    <header>
+      <div class="logo">
+        <img src="imagenes/logo.png" alt="Style Elegance Sport" />
+      </div>
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Ropa</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <!-- Enlace directo a la página de carrito -->
+      <a href="cart.html" class="header-emoji" title="Ver Carrito"
+        >🛒 Ver Carrito</a
+      >
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <!-- 3) HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <img
+          src="imagenes/logo.png"
+          class="hero-logo"
+          alt="Style Elegance Sport"
+        />
+        <h1 class="fade-in">Style Elegance Sport</h1>
+        <p class="fade-in delay-1">
+          Tu mejor opción en ropa deportiva y urbana
+        </p>
+        <a href="#productos" class="btn fade-in delay-2">Ver Colección</a>
+        <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
+      </div>
+    </section>
+
+    <main>
+      <!-- 4) FILTROS -->
+      <section class="filtros">
+        <button class="filter-btn active" data-cat="all">Todo</button>
+        <button class="filter-btn" data-cat="men">Hombres</button>
+        <button class="filter-btn" data-cat="women">Mujeres</button>
+        <button class="filter-btn" data-cat="unisex">Unisex</button>
+      </section>
+
+      <!-- 5) PRODUCTOS -->
+      <section id="productos" class="productos">
+        <h2>Ropa Destacada</h2>
+        <div class="grid-productos">
+          <!-- Ejemplo de un producto -->
+          <div class="producto" data-cat="all men">
+            <img src="imagenes/producto1.jpg" alt="Producto 1" />
+            <div class="producto-header">
+              <h3>Producto 1</h3>
+            </div>
+            <p class="precio">50.00</p>
+            <label>Tipo:</label>
+            <select
+              class="type-select"
+              data-combo="50"
+              data-polo="30"
+              data-short="20"
+            >
+              <option value="combo">Combo (Polo+Short+Medias) – S/50</option>
+              <option value="polo">Sólo Polo – S/30</option>
+              <option value="short">Sólo Short – S/20</option>
+            </select>
+            <label>Talla:</label>
+            <select class="size-select">
+              <option value="">Selecciona</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+            <label>Cantidad:</label>
+            <input type="number" min="1" value="1" class="qty-input" />
+            <button class="btn-agregar">Añadir al carrito</button>
+          </div>
+          <!-- Repite para Producto 2 -->
+          <div class="producto" data-cat="all women">
+            <img src="imagenes/producto2.jpg" alt="Producto 2" />
+            <div class="producto-header">
+              <h3>Producto 2</h3>
+            </div>
+            <p class="precio" id="precio2">50.00</p>
+            <label for="tipo2">Tipo:</label>
+            <select
+              id="tipo2"
+              class="type-select"
+              data-combo="50"
+              data-polo="30"
+              data-short="20"
+            >
+              <option value="combo">Combo (Polo+Short+Medias) – S/50</option>
+              <option value="polo">Sólo Polo – S/30</option>
+              <option value="short">Sólo Short – S/20</option>
+            </select>
+            <label for="talla2">Talla:</label>
+            <select id="talla2" class="size-select">
+              <option value="">Selecciona</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+            <label for="cant2">Cantidad:</label>
+            <input
+              id="cant2"
+              type="number"
+              min="1"
+              value="1"
+              class="qty-input"
+            />
+            <button
+              class="btn-agregar"
+              data-tipo-select="tipo2"
+              data-talla-select="talla2"
+              data-cantidad-input="cant2"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+
+          <!-- Producto 3 -->
+          <div class="producto" data-cat="all men">
+            <img src="imagenes/producto3.jpg" alt="Producto 3" />
+            <div class="producto-header">
+              <h3>Producto 3</h3>
+            </div>
+            <p class="precio" id="precio3">50.00</p>
+            <label for="tipo3">Tipo:</label>
+            <select
+              id="tipo3"
+              class="type-select"
+              data-combo="50"
+              data-polo="30"
+              data-short="20"
+            >
+              <option value="combo">Combo (Polo+Short+Medias) – S/50</option>
+              <option value="polo">Sólo Polo – S/30</option>
+              <option value="short">Sólo Short – S/20</option>
+            </select>
+            <label for="talla3">Talla:</label>
+            <select id="talla3" class="size-select">
+              <option value="">Selecciona</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+            <label for="cant3">Cantidad:</label>
+            <input
+              id="cant3"
+              type="number"
+              min="1"
+              value="1"
+              class="qty-input"
+            />
+            <button
+              class="btn-agregar"
+              data-tipo-select="tipo3"
+              data-talla-select="talla3"
+              data-cantidad-input="cant3"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+
+          <!-- Producto 4 -->
+          <div class="producto" data-cat="all unisex">
+            <img src="imagenes/producto4.jpg" alt="Producto 4" />
+            <div class="producto-header">
+              <h3>Producto 4</h3>
+            </div>
+            <p class="precio" id="precio4">50.00</p>
+            <label for="tipo4">Tipo:</label>
+            <select
+              id="tipo4"
+              class="type-select"
+              data-combo="50"
+              data-polo="30"
+              data-short="20"
+            >
+              <option value="combo">Combo (Polo+Short+Medias) – S/50</option>
+              <option value="polo">Sólo Polo – S/30</option>
+              <option value="short">Sólo Short – S/20</option>
+            </select>
+            <label for="talla4">Talla:</label>
+            <select id="talla4" class="size-select">
+              <option value="">Selecciona</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+            <label for="cant4">Cantidad:</label>
+            <input
+              id="cant4"
+              type="number"
+              min="1"
+              value="1"
+              class="qty-input"
+            />
+            <button
+              class="btn-agregar"
+              data-tipo-select="tipo4"
+              data-talla-select="talla4"
+              data-cantidad-input="cant4"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+
+          <!-- Producto 5 -->
+          <div class="producto" data-cat="all women">
+            <img src="imagenes/producto5.jpg" alt="Producto 5" />
+            <div class="producto-header">
+              <h3>Producto 5</h3>
+            </div>
+            <p class="precio" id="precio5">50.00</p>
+            <label for="tipo5">Tipo:</label>
+            <select
+              id="tipo5"
+              class="type-select"
+              data-combo="50"
+              data-polo="30"
+              data-short="20"
+            >
+              <option value="combo">Combo (Polo+Short+Medias) – S/50</option>
+              <option value="polo">Sólo Polo – S/30</option>
+              <option value="short">Sólo Short – S/20</option>
+            </select>
+            <label for="talla5">Talla:</label>
+            <select id="talla5" class="size-select">
+              <option value="">Selecciona</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+            <label for="cant5">Cantidad:</label>
+            <input
+              id="cant5"
+              type="number"
+              min="1"
+              value="1"
+              class="qty-input"
+            />
+            <button
+              class="btn-agregar"
+              data-tipo-select="tipo5"
+              data-talla-select="talla5"
+              data-cantidad-input="cant5"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+
+          <!-- Producto 6 -->
+          <div class="producto" data-cat="all men">
+            <img src="imagenes/producto6.jpg" alt="Producto 6" />
+            <div class="producto-header">
+              <h3>Producto 6</h3>
+            </div>
+            <p class="precio" id="precio6">50.00</p>
+            <label for="tipo6">Tipo:</label>
+            <select
+              id="tipo6"
+              class="type-select"
+              data-combo="50"
+              data-polo="30"
+              data-short="20"
+            >
+              <option value="combo">Combo (Polo+Short+Medias) – S/50</option>
+              <option value="polo">Sólo Polo – S/30</option>
+              <option value="short">Sólo Short – S/20</option>
+            </select>
+            <label for="talla6">Talla:</label>
+            <select id="talla6" class="size-select">
+              <option value="">Selecciona</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+            <label for="cant6">Cantidad:</label>
+            <input
+              id="cant6"
+              type="number"
+              min="1"
+              value="1"
+              class="qty-input"
+            />
+            <button
+              class="btn-agregar"
+              data-tipo-select="tipo6"
+              data-talla-select="talla6"
+              data-cantidad-input="cant6"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+          <!-- Producto 7 -->
+<div class="producto" data-cat="all unisex">
+  <img src="imagenes/producto7.jpg" alt="Producto 7" />
+  <div class="producto-header">
+    <h3>Producto 7</h3>
+  </div>
+  <p class="precio">50.00</p>
+
+  <label>Tipo:</label>
+  <select
+    class="type-select"
+    data-combo="50"
+    data-polo="30"
+    data-short="20"
+  >
+    <option value="combo">Combo (Polo+Short+Medias) – S/50</option>
+    <option value="polo">Sólo Polo – S/30</option>
+    <option value="short">Sólo Short – S/20</option>
+  </select>
+
+  <label>Talla:</label>
+  <select class="size-select">
+    <option value="">Selecciona</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+  </select>
+
+  <label>Cantidad:</label>
+  <input type="number" min="1" value="1" class="qty-input" />
+
+  <button class="btn-agregar">Añadir al carrito</button>
+</div>
+
+<!-- Producto 8 -->
+<div class="producto" data-cat="all women">
+  <img src="imagenes/producto8.jpg" alt="Producto 8" />
+  <div class="producto-header">
+    <h3>Producto 8</h3>
+  </div>
+  <p class="precio">50.00</p>
+
+  <label>Tipo:</label>
+  <select
+    class="type-select"
+    data-combo="50"
+    data-polo="30"
+    data-short="20"
+  >
+    <option value="combo">Combo (Polo+Short+Medias) – S/50</option>
+    <option value="polo">Sólo Polo – S/30</option>
+    <option value="short">Sólo Short – S/20</option>
+  </select>
+
+  <label>Talla:</label>
+  <select class="size-select">
+    <option value="">Selecciona</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+  </select>
+
+  <label>Cantidad:</label>
+  <input type="number" min="1" value="1" class="qty-input" />
+
+  <button class="btn-agregar">Añadir al carrito</button>
+</div>
+        </div>
+      </section>
+
+      <!-- 6) NEWSLETTER -->
+      <section class="newsletter">
+       <h2>Viste tu pasión: innovación y elegancia en cada prenda</h2>
+      </section>
+
+  <!-- 7) PREGUNTAS FRECUENTES -->
+<section id="faq" class="faq">
+  <h2>Preguntas frecuentes</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span>¿Cuánto tarda el envío?</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="accordion-body">
+        <p>
+          Normalmente de 3 a 5 días hábiles dentro de Lima, y de 5 a 8 días al resto del Perú.
+        </p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span>¿Puedo devolver un producto?</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="accordion-body">
+        <p>
+          Sí, admitimos devoluciones dentro de los 7 días posteriores a la entrega, siempre que el producto esté sin usar.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+ <!-- 8) CONTACTO -->
+<section id="contacto" class="contacto">
+  <h2>Contáctanos</h2>
+  <p class="contact-intro">
+    ¿Tienes una duda, quieres hacer un pedido o solo saludar? Escríbenos por:
+  </p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <i class="fab fa-whatsapp"></i>
+      <a href="https://wa.me/51979380585" target="_blank">
+        +51 979 380 585<br><span>WhatsApp</span>
+      </a>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-phone-alt"></i>
+      <a href="tel:+51979380585">
+        +51 979 380 585<br><span>Llamada</span>
+      </a>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:contacto@styleelegancesport.com">
+        contacto
+       @styleeleganceport.com
+      </a>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <p>
+        Ventanilla<br>
+        Av. Luis Felipe de las Casas, MZ P LT 01
+      </p>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-facebook-f"></i>
+      <a href="https://www.facebook.com/profile.php?id=61553598194047" target="_blank">
+        /StyleEleganceSport
+      </a>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-instagram"></i>
+      <a href="https://www.instagram.com/styleelegancesport" target="_blank">
+        @styleelegancesport
+      </a>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-tiktok"></i>
+      <a href="https://www.tiktok.com/@styleelegancesport" target="_blank">
+        @styleelegancesport
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- 9) FOOTER -->
+    <footer>
+      <div class="social-footer">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p>© 2025 Style Elegance Sport. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Back to top -->
+    <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <!-- Modal de confirmación pequeña -->
+    <div id="confirmSmall" class="modal">
+      <div class="modal-content confirm-small">
+        <div class="confirm-emoji">✅</div>
+        <h2 class="confirm-title">¡Se añadió al carrito!</h2>
+        <button id="btnConfirmOk" class="btn btn-confirm">OK</buttonç>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // 1) Menú móvil & Back to top
+      document.querySelector(".menu-toggle").onclick = () =>
+        document.querySelector(".nav-links").classList.toggle("active");
+      const btnTop = document.querySelector(".back-to-top");
+      window.onscroll = () =>
+        (btnTop.style.display = window.scrollY > 300 ? "flex" : "none");
+      btnTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // 2) Filtros
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.onclick = () => {
+          document
+            .querySelector(".filter-btn.active")
+            .classList.remove("active");
+          btn.classList.add("active");
+          const cat = btn.dataset.cat;
+          document.querySelectorAll(".producto").forEach((p) => {
+            p.style.display =
+              cat === "all" || p.dataset.cat.includes(cat) ? "block" : "none";
+          });
+        };
+      });
+
+      // 3) Al pulsar “Añadir al carrito”, guardamos y abrimos el confirmSmall
+      document.querySelectorAll(".btn-agregar").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // 3.1) Guardar en localStorage (idéntico a tu lógica previa)
+          const cont = btn.closest(".producto");
+          const imgSrc = cont.querySelector("img").src;
+          const nombre = cont.querySelector("h3").textContent;
+          const tipoEl = cont.querySelector(".type-select");
+          const tipo = tipoEl.value;
+          const precio = parseFloat(tipoEl.dataset[tipo]);
+          const talla = cont.querySelector(".size-select").value;
+          const cantidad = parseInt(cont.querySelector(".qty-input").value, 10);
+          if (!talla) return alert("Selecciona una talla.");
+          const carrito = JSON.parse(localStorage.getItem("cart") || "[]");
+          carrito.push({ img: imgSrc, nombre, talla, precio, cantidad });
+          localStorage.setItem("cart", JSON.stringify(carrito));
+
+          // 3.2) Abrir modal de confirmación pequeña
+          document.getElementById("confirmSmall").style.display = "flex";
+        });
+      });
+
+      // 4) Cerrar confirmSmall al pulsar OK
+      document.getElementById("btnConfirmOk").onclick = () => {
+        document.getElementById("confirmSmall").style.display = "none";
+      };
+
+      // 5) Cerrar cualquier modal al clicar fuera
+      window.onclick = (e) => {
+        if (e.target.classList.contains("modal")) {
+          e.target.style.display = "none";
+        }
+      };
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const item = header.closest('.accordion-item');
+          // cerrar otros abiertos
+          document.querySelectorAll('.accordion-item.open').forEach(openItem => {
+            if (openItem !== item) openItem.classList.remove('open');
+          });
+          // alternar este
+          item.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+  </body>
+</html>

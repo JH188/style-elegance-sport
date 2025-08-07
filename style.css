@@ -1,0 +1,728 @@
+/* 0) Layout general */
+:root {
+  --dark: #0A1F44;
+  --light: #F7F7F7;
+  --accent: #FF4C4C;
+  --text-dark: #333;
+  --text-light: #fff;
+  --shadow: rgba(10,31,68,0.1);
+  --radius: 8px;
+  --transition: 0.3s;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+  background: var(--light);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+main {
+  flex: 1;
+}
+
+/* 1) Top bar */
+.top-announcement {
+  background: var(--accent);
+  color: var(--text-light);
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* 2) Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px var(--shadow);
+}
+.logo img {
+  max-height: 50px;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.nav-links a:hover {
+  color: var(--accent);
+}
+.header-emoji {
+  font-size: 1.8rem;
+  color: var(--text-light);
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 3) Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* … resto de estilos del hero … */
+
+/* 4) Filtros */
+.filtros {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.filter-btn {
+  background: var(--light);
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  color: var(--text-light);
+  border-color: var(--accent);
+}
+
+/* 5) Productos */
+.productos {
+  padding: 3rem 2rem;
+}
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.producto {
+  background: var(--text-light);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+.producto img {
+  width: 100%;
+  display: block;
+}
+.producto-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 0.5rem;
+}
+.precio {
+  margin: 0.5rem 1rem;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.type-select,
+.size-select,
+.qty-input {
+  width: calc(100% - 2rem);
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+}
+.qty-input {
+  width: 60px;
+}
+.btn-agregar {
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 0 1rem 1.5rem;
+  padding: 0.75rem;
+  background: var(--dark);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background var(--transition);
+}
+.btn-agregar:hover {
+  background: var(--accent);
+}
+
+/* 6) Newsletter */
+.newsletter {
+  background: #0A1F44;       /* mismo azul oscuro del header */
+  color: #fff;               /* texto blanco para que contraste */
+  text-align: center;
+  padding: 3rem 2rem;        /* separación arriba y abajo */
+}
+.newsletter h2 {
+  font-size: 2.2rem;         /* tamaño grande */
+  font-weight: 700;
+  margin: 0;
+}
+
+/* 7) Testimonios */
+/* … */
+/* === Sección FAQ === */
+.faq {
+  background: #f7f7f7;
+  padding: 4rem 2rem;
+}
+.faq h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.faq h2::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Acordeón */
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+.accordion-header {
+  width: 100%;
+  background: #fff;
+  border: none;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.accordion-header:hover {
+  background: #f0f0f0;
+}
+.accordion-header i {
+  transition: transform 0.3s;
+}
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.accordion-body p {
+  padding: 0.75rem 1.25rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Estado abierto: max-height mayor al contenido */
+.accordion-item.open .accordion-body {
+  max-height: 500px;   /* asegúrate de que sea más grande que tu contenido */
+}
+.accordion-item.open .accordion-header i {
+  transform: rotate(180deg);
+}
+
+
+
+/* 8) Contacto */
+/* … */
+/* === Sección Contáctanos mejorada === */
+.contacto {
+  background: #0A1F44;          /* fondo oscuro */
+  color: #F7F7F7;               /* texto claro */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.contacto h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.contacto h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -0.5rem;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #FF4C4C;
+  border-radius: 2px;
+}
+.contact-intro {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Grid de tarjetas */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cada tarjeta de contacto */
+.contact-card {
+  background: #F7F7F7;
+  color: #0A1F44;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Icono grande */
+.contact-card i {
+  font-size: 1.8rem;
+  color: #FF4C4C;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* Enlaces y textos */
+.contact-card a,
+.contact-card p {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.contact-card a span {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.3rem;
+}
+
+/* Responsive ajustes */
+@media(max-width: 600px) {
+  .contacto {
+    padding: 3rem 1rem;
+  }
+  .contact-card {
+    text-align: center;
+  }
+  .contact-card i {
+    margin: 0 auto 0.5rem;
+  }
+}
+
+
+/* 9) Footer */
+footer {
+  background: var(--dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.social-footer a {
+  color: var(--text-light);
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color var(--transition);
+}
+.social-footer a:hover {
+  color: var(--accent);
+}
+
+/* 10) Back to Top */
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  background: var(--accent);
+  color: var(--text-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px var(--shadow);
+  transition: background var(--transition);
+}
+.back-to-top:hover {
+  background: var(--dark);
+}
+
+/* 11) Modal Carrito (no usado para confirmSmall) */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+
+/* confirmación pequeña */
+.confirm-small {
+  background: linear-gradient(135deg, #FF6B6B, #FFD93D);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: popIn 0.3s ease-out forwards;
+}
+
+/* Emoji grande arriba */
+.confirm-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Título con color y tipografía */
+.confirm-title {
+  font-size: 1.2rem;
+  color: #0A1F44;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Botón OK personalizado */
+.btn-confirm {
+  background: #0A1F44;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform var(--transition), background var(--transition);
+}
+.btn-confirm:hover {
+  background: #FF4C4C;
+  transform: scale(1.05);
+}
+
+/* Animación de aparición */
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 0.5rem;
+    background: var(--dark);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+  .grid-productos {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==== Estilos extra para “dar vida” al carrito ==== */
+
+/* Encabezado de tabla con color de acento */
+.cart-table thead th {
+  background: var(--accent);
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+/* Hover en filas */
+.cart-table tbody tr:hover {
+  background: rgba(255,76,76,0.1);
+}
+
+/* Inputs de cantidad */
+.qty-update {
+  padding: 0.5rem;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  width: 60px;
+  transition: border-color .3s;
+}
+.qty-update:focus {
+  outline: none;
+  border-color: #FFB3B3;
+}
+
+/* Botón de eliminar como icono */
+.remove-item {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color .3s;
+}
+.remove-item:hover {
+  color: #882E2E;
+}
+
+/* Resumen con borde de acento */
+.cart-summary {
+  background: #fff4f4;
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Botones de acción más vistosos */
+.cart-actions .btn-primary {
+  background: #25D366;       /* verde WhatsApp */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  transition: background .3s, transform .3s;
+}
+.cart-actions .btn-primary:hover {
+  background: #1DA851;
+  transform: translateY(-2px);
+}
+
+.cart-actions .btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  transition: background .3s, color .3s, transform .3s;
+}
+.cart-actions .btn-secondary:hover {
+  background: var(--accent);
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+/* ===== Carrito – estilo profesional ===== */
+
+/* Contenedor */
+.cart-container {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+}
+
+/* Título */
+.cart-title {
+  font-size: 1.75rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+/* Tabla */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+.cart-table thead th {
+  background: var(--accent);
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  border-bottom: 3px solid #fff;
+}
+.cart-table tbody tr {
+  transition: background 0.2s;
+}
+.cart-table tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+.cart-table tbody tr:hover {
+  background: #f0f0f0;
+}
+.cart-table th,
+.cart-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e2e2;
+  vertical-align: middle;
+}
+
+/* Quitar flechitas de los inputs numéricos */
+.qty-update::-webkit-outer-spin-button,
+.qty-update::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.qty-update {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  text-align: center;
+}
+
+/* Inputs */
+.qty-update {
+  width: 60px;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  transition: border-color 0.2s;
+}
+.qty-update:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Botón eliminar */
+.remove-item {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.remove-item:hover {
+  color: #aa2e2e;
+}
+
+/* Resumen */
+.cart-summary {
+  background: #fff;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.cart-summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+.cart-summary hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0.75rem 0;
+}
+
+/* Botones de acción */
+.cart-actions .btn {
+  min-width: 180px;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.cart-actions .btn-primary {
+  background: #25D366;  /* verde WhatsApp */
+  color: #fff;
+  border: none;
+}
+.cart-actions .btn-primary:hover {
+  background: #1DA851;
+  transform: translateY(-2px);
+}
+.cart-actions .btn-secondary {
+  background: #fff;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+.cart-actions .btn-secondary:hover {
+  background: var(--accent);
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+/* Ajustes responsive */
+@media (max-width: 600px) {
+  .cart-table thead {
+    display: none;
+  }
+  .cart-table, .cart-table tbody, .cart-table tr, .cart-table td {
+    display: block;
+    width: 100%;
+  }
+  .cart-table tr {
+    margin-bottom: 1rem;
+  }
+  .cart-table td {
+    padding: 0.5rem;
+    text-align: right;
+    position: relative;
+  }
+  .cart-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+  .cart-actions .btn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
