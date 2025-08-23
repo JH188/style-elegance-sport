@@ -17,7 +17,7 @@
   </head>
   <body>
     <div class="top-announcement">
-      🚚 Envío gratis en compras mayores a S/150
+      🚚 Envío gratis en compras mayores a S/50
     </div>
     <header>
       <div class="logo">
@@ -49,7 +49,7 @@
         <tbody id="cart-body"></tbody>
       </table>
       <div class="cart-summary">
-        <p>Coste de productos: S/ <span id="sum-products">0.00</span></p>
+        <p>Costo de productos: S/ <span id="sum-products">0.00</span></p>
         <p>Envío: S/ <span id="sum-shipping">0.00</span></p>
         <hr />
         <p>
@@ -107,7 +107,7 @@
           `;
           cartBody.appendChild(tr);
         });
-        const envio = totalProd >= 150 ? 0 : 15;
+        const envio = totalProd >= 50 ? 0 : 15;
         sumProducts.textContent = totalProd.toFixed(2);
         sumShipping.textContent = envio.toFixed(2);
         sumTotal.textContent = (totalProd + envio).toFixed(2);
@@ -172,3 +172,4 @@
     </script>
   </body>
 </html>
+
